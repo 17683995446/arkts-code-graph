@@ -87,12 +87,16 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
     arrow_function_pattern = r'(?:export\s+)?const\s+(\w+)\s*=\s*(?:async\s+)?\([^)]*\)\s*=>'
     variable_pattern = r'(?:export\s+)?const\s+(\w+)\s*[=:]'
     type_pattern = r'(?:export\s+)?type\s+(\w+)\s*='
+    enum_pattern = r'(?:export\s+)?enum\s+(\w+)'
     
     added_names = set()
+    brace_depth = 0  # 当前花括号深度
     
     for line_num, line in enumerate(lines, 1):
+        in_block = brace_depth > 0
+        
         class_match = re.search(class_pattern, line)
-        if class_match:
+        if class_match and not in_block:
             name = class_match.group(1)
             if name not in added_names:
                 added_names.add(name)
@@ -120,10 +124,9 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     })
                 
                 elements.append(elem)
-                continue
         
         interface_match = re.search(interface_pattern, line)
-        if interface_match:
+        if interface_match and not in_block:
             name = interface_match.group(1)
             if name not in added_names:
                 added_names.add(name)
@@ -141,10 +144,9 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "line_end": end_line,
                     "metadata": {}
                 })
-                continue
         
         function_match = re.search(function_pattern, line)
-        if function_match:
+        if function_match and not in_block:
             name = function_match.group(1)
             if name not in added_names:
                 added_names.add(name)
@@ -162,10 +164,9 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "line_end": end_line,
                     "metadata": {}
                 })
-                continue
         
         arrow_match = re.search(arrow_function_pattern, line)
-        if arrow_match:
+        if arrow_match and not in_block:
             name = arrow_match.group(1)
             if name not in added_names:
                 added_names.add(name)
@@ -177,13 +178,13 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "line_end": line_num,
                     "metadata": {}
                 })
-                continue
         
         type_match = re.search(type_pattern, line)
-        if type_match:
+        if type_match and not in_block:
             name = type_match.group(1)
             if name not in added_names:
                 added_names.add(name)
+                start_line = line_num
                 if '{' in line:
                     end_line = find_block_end_line(lines, line_num - 1)
                 else:
@@ -196,14 +197,33 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "name": name,
                     "element_type": "type",
                     "code": code.strip()[:500],
-                    "line_start": line_num,
+                    "line_start": start_line,
                     "line_end": end_line,
                     "metadata": {}
                 })
-                continue
+        
+        enum_match = re.search(enum_pattern, line)
+        if enum_match and not in_block:
+            name = enum_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                start_line = line_num
+                end_line = find_block_end_line(lines, line_num - 1)
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elements.append({
+                    "name": name,
+                    "element_type": "enum",
+                    "code": code.strip()[:500],
+                    "line_start": start_line,
+                    "line_end": end_line,
+                    "metadata": {}
+                })
         
         var_match = re.search(variable_pattern, line)
-        if var_match:
+        if var_match and not in_block:
             name = var_match.group(1)
             if name not in added_names:
                 added_names.add(name)
@@ -215,6 +235,9 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "line_end": line_num,
                     "metadata": {}
                 })
+        
+        # 检查代码之后再更新深度！
+        brace_depth += line.count('{') - line.count('}')
     
     import_pattern = re.compile(r'import\s+(?:{\s*)?([\w,\s*]+)(?:\s*})?\s+from\s+[\'"]([^\'"]+)[\'"]', re.MULTILINE)
     for match in import_pattern.finditer(content):
