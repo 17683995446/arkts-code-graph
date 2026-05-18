@@ -81,44 +81,140 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
     relations = []
     lines = content.split('\n')
     
-    patterns = [
-        (r'(?:export\s+)?class\s+(\w+)(?:\s+extends\s+(\w+))?(?:\s+implements\s+([\w,\s]+))?',
-         'class'),
-        (r'(?:export\s+)?interface\s+(\w+)', 'interface'),
-        (r'(?:(?:export|async)\s+)*function\s+(\w+)\s*\(', 'function'),
-        (r'(?:export\s+)?const\s+(\w+)\s*=\s*(?:async\s+)?\(', 'function'),
-        (r'(?:export\s+)?const\s+(\w+)\s*[=:]', 'variable'),
-    ]
+    class_pattern = r'(?:export\s+)?class\s+(\w+)'
+    interface_pattern = r'(?:export\s+)?interface\s+(\w+)'
+    function_pattern = r'(?:export\s+)?function\s+(\w+)\s*\('
+    arrow_function_pattern = r'(?:export\s+)?const\s+(\w+)\s*=\s*(?:async\s+)?\([^)]*\)\s*=>'
+    variable_pattern = r'(?:export\s+)?const\s+(\w+)\s*[=:]'
+    type_pattern = r'(?:export\s+)?type\s+(\w+)\s*='
     
-    for pattern, elem_type in patterns:
-        regex = re.compile(pattern, re.MULTILINE)
-        for match in regex.finditer(content):
-            name = match.group(1)
-            start_line = content[:match.start()].count('\n') + 1
-            end_line = find_block_end(content, match.end()) if elem_type in ['class', 'function'] else start_line
-            
-            if any(e['name'] == name for e in elements):
+    added_names = set()
+    
+    for line_num, line in enumerate(lines, 1):
+        class_match = re.search(class_pattern, line)
+        if class_match:
+            name = class_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                start_line = line_num
+                end_line = find_block_end_line(lines, line_num - 1)
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elem = {
+                    "name": name,
+                    "element_type": "class",
+                    "code": code.strip()[:500],
+                    "line_start": start_line,
+                    "line_end": end_line,
+                    "metadata": {}
+                }
+                
+                extends_match = re.search(r'extends\s+(\w+)', line)
+                if extends_match:
+                    relations.append({
+                        "from_name": name,
+                        "to_name": extends_match.group(1),
+                        "relation_type": "extends"
+                    })
+                
+                elements.append(elem)
                 continue
-            
-            code = '\n'.join(lines[max(0, start_line-1):min(len(lines), end_line)])
-            
-            elem = {
-                "name": name,
-                "element_type": elem_type,
-                "code": code.strip()[:500],
-                "line_start": start_line,
-                "line_end": end_line,
-                "metadata": {}
-            }
-            
-            if elem_type == 'class' and match.group(2):
-                relations.append({
-                    "from_name": name,
-                    "to_name": match.group(2),
-                    "relation_type": "extends"
+        
+        interface_match = re.search(interface_pattern, line)
+        if interface_match:
+            name = interface_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                start_line = line_num
+                end_line = find_block_end_line(lines, line_num - 1)
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elements.append({
+                    "name": name,
+                    "element_type": "interface",
+                    "code": code.strip()[:500],
+                    "line_start": start_line,
+                    "line_end": end_line,
+                    "metadata": {}
                 })
-            
-            elements.append(elem)
+                continue
+        
+        function_match = re.search(function_pattern, line)
+        if function_match:
+            name = function_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                start_line = line_num
+                end_line = find_block_end_line(lines, line_num - 1)
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elements.append({
+                    "name": name,
+                    "element_type": "function",
+                    "code": code.strip()[:500],
+                    "line_start": start_line,
+                    "line_end": end_line,
+                    "metadata": {}
+                })
+                continue
+        
+        arrow_match = re.search(arrow_function_pattern, line)
+        if arrow_match:
+            name = arrow_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                elements.append({
+                    "name": name,
+                    "element_type": "function",
+                    "code": line.strip()[:500],
+                    "line_start": line_num,
+                    "line_end": line_num,
+                    "metadata": {}
+                })
+                continue
+        
+        type_match = re.search(type_pattern, line)
+        if type_match:
+            name = type_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                if '{' in line:
+                    end_line = find_block_end_line(lines, line_num - 1)
+                else:
+                    end_line = line_num
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elements.append({
+                    "name": name,
+                    "element_type": "type",
+                    "code": code.strip()[:500],
+                    "line_start": line_num,
+                    "line_end": end_line,
+                    "metadata": {}
+                })
+                continue
+        
+        var_match = re.search(variable_pattern, line)
+        if var_match:
+            name = var_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                elements.append({
+                    "name": name,
+                    "element_type": "variable",
+                    "code": line.strip()[:500],
+                    "line_start": line_num,
+                    "line_end": line_num,
+                    "metadata": {}
+                })
     
     import_pattern = re.compile(r'import\s+(?:{\s*)?([\w,\s*]+)(?:\s*})?\s+from\s+[\'"]([^\'"]+)[\'"]', re.MULTILINE)
     for match in import_pattern.finditer(content):
@@ -133,13 +229,25 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
     
     return {"elements": elements, "relations": relations[:50]}
 
-def find_block_end(content: str, start: int) -> int:
-    brace_count = 1
-    i = start
-    while i < len(content) and brace_count > 0:
-        if content[i] == '{':
-            brace_count += 1
-        elif content[i] == '}':
-            brace_count -= 1
-        i += 1
-    return min(content[:i].count('\n') + 1, start + 200)
+def find_block_end_line(lines: list, start_idx: int) -> int:
+    if start_idx >= len(lines):
+        return start_idx + 1
+    
+    line = lines[start_idx]
+    end_line = start_idx + 1
+    
+    if '{' not in line:
+        return end_line
+    
+    brace_count = line.count('{') - line.count('}')
+    
+    if brace_count <= 0:
+        return end_line
+    
+    for i in range(start_idx + 1, min(start_idx + 200, len(lines))):
+        brace_count += lines[i].count('{') - lines[i].count('}')
+        end_line = i + 1
+        if brace_count <= 0:
+            return end_line
+    
+    return end_line
