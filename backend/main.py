@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api.routes import router
-from backend.database.db import init_database
+from api.routes import router
+from database.db import init_database
 
 app = FastAPI(title="ArkTS代码知识图谱API", version="1.0.0")
 

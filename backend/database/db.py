@@ -16,6 +16,9 @@ def init_database():
     conn = get_connection()
     cursor = conn.cursor()
     
+    # 启用外键约束
+    cursor.execute("PRAGMA foreign_keys = ON")
+    
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS files (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -57,6 +60,45 @@ def init_database():
     
     conn.commit()
     conn.close()
+
+def safe_get_stats():
+    """安全获取统计信息，处理表不存在的情况"""
+    try:
+        return get_stats()
+    except Exception:
+        return {
+            'file_count': 0,
+            'element_count': 0,
+            'last_update': None
+        }
+
+def safe_get_all_files():
+    """安全获取所有文件，处理表不存在的情况"""
+    try:
+        return get_all_files()
+    except Exception:
+        return []
+
+def safe_get_all_elements():
+    """安全获取所有元素，处理表不存在的情况"""
+    try:
+        return get_all_elements()
+    except Exception:
+        return []
+
+def safe_get_all_relations():
+    """安全获取所有关系，处理表不存在的情况"""
+    try:
+        return get_all_relations()
+    except Exception:
+        return []
+
+def safe_search_elements(query: str, element_type: str = None):
+    """安全搜索元素，处理表不存在的情况"""
+    try:
+        return search_elements(query, element_type)
+    except Exception:
+        return []
 
 def compute_file_hash(file_path: str) -> str:
     try:

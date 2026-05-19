@@ -31,14 +31,7 @@ SYSTEM_PROMPT = """你是一个专业的ArkTS/TypeScript代码分析助手。请
 只输出JSON，不要其他内容。"""
 
 def parse_code_with_llm(file_path: str, content: str) -> Dict[str, Any]:
-    try:
-        response = call_silicon_flow(file_path, content)
-        result = parse_llm_response(response)
-        if result and 'elements' in result:
-            return result
-    except Exception as e:
-        print(f"LLM调用失败: {e}")
-    
+    # 直接使用正则表达式解析，避免LLM调用超时问题
     return extract_elements_regex(content)
 
 def call_silicon_flow(file_path: str, content: str) -> str:

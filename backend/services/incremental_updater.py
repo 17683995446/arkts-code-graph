@@ -3,13 +3,13 @@ import json
 import time
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Callable
-from backend.database.db import (
+from database.db import (
     compute_file_hash, delete_file_by_path, insert_file,
     insert_code_element, insert_relation, get_file_hash
 )
-from backend.services.llm_service import parse_code_with_llm
-from backend.services.debounce_scheduler import DebounceScheduler
-from backend.services.file_watcher import FileWatcher
+from services.llm_service import parse_code_with_llm
+from services.debounce_scheduler import DebounceScheduler
+from services.file_watcher import FileWatcher
 
 class IncrementalUpdater:
     def __init__(self):
