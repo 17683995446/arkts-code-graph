@@ -35,6 +35,7 @@ simple_test_data/
 concurrent_test_data/
 stress_test_data/
 ultimate_test_project/
+chaos_test_project/
 
 # Realistic project test data (temporary)
 realistic_project/deep_test_special_1.ts
@@ -49,6 +50,8 @@ advanced_stress_test.py
 ultimate_stress_test.py
 debug_parser.py
 deep_stress_*.py
+test_*.py
+debug_*.py
 
 # Test reports
 final_test_report.md

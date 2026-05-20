@@ -69,26 +69,55 @@ def parse_llm_response(response: str) -> Optional[Dict[str, Any]]:
         pass
     return None
 
+def remove_comments_and_strings(content: str) -> str:
+    """去掉注释和字符串内容，避免误解析"""
+    # 替换多行注释 /* ... */
+    pattern = r'/\*[\s\S]*?\*/'
+    content = re.sub(pattern, '', content)
+    
+    # 替换单行注释 // ...
+    content = re.sub(r'//.*$', '', content, flags=re.MULTILINE)
+    
+    # 替换双引号字符串
+    content = re.sub(r'"[^"]*"', '', content)
+    
+    # 替换单引号字符串
+    content = re.sub(r"'[^']*'", '', content)
+    
+    # 替换反引号字符串（模板字符串）
+    content = re.sub(r'`[^`]*`', '', content)
+    
+    return content
+
 def extract_elements_regex(content: str) -> Dict[str, Any]:
     elements = []
     relations = []
     lines = content.split('\n')
     
-    class_pattern = r'(?:export\s+)?class\s+(\w+)'
-    interface_pattern = r'(?:export\s+)?interface\s+(\w+)'
-    function_pattern = r'(?:export\s+)?function\s+(\w+)\s*\('
-    arrow_function_pattern = r'(?:export\s+)?const\s+(\w+)\s*=\s*(?:async\s+)?\([^)]*\)\s*=>'
-    variable_pattern = r'(?:export\s+)?const\s+(\w+)\s*[=:]'
-    type_pattern = r'(?:export\s+)?type\s+(\w+)\s*='
-    enum_pattern = r'(?:export\s+)?enum\s+(\w+)'
+    # 创建清理版本用于检查（去掉注释和字符串）
+    cleaned_content = remove_comments_and_strings(content)
+    cleaned_lines = cleaned_content.split('\n')
+    
+    # 更新正则表达式，支持$和_等有效字符
+    # 标识符可以由字母、数字、_、$组成，但不能以数字开头
+    class_pattern = r'(?:export\s+)?class\s+([a-zA-Z_$][a-zA-Z0-9_$]*)(?:<[^>]+>)?'
+    interface_pattern = r'(?:export\s+)?interface\s+([a-zA-Z_$][a-zA-Z0-9_$]*)(?:<[^>]+>)?'
+    function_pattern = r'(?:export\s+)?function\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\('
+    arrow_function_pattern = r'(?:export\s+)?const\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*(?:async\s+)?\([^)]*\)\s*=>'
+    variable_pattern = r'(?:export\s+)?const\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*[=:]'
+    type_pattern = r'(?:export\s+)?type\s+([a-zA-Z_$][a-zA-Z0-9_$]*)(?:<[^>]+>)?\s*='
+    enum_pattern = r'(?:export\s+)?enum\s+([a-zA-Z_$][a-zA-Z0-9_$]*)'
     
     added_names = set()
     brace_depth = 0  # 当前花括号深度
     
-    for line_num, line in enumerate(lines, 1):
+    # 处理跨行关键字的情况：先收集所有可能的导出，然后跨行拼接
+    # 简单版本：先只处理单行能识别的
+    for line_num, (line, cleaned_line) in enumerate(zip(lines, cleaned_lines), 1):
         in_block = brace_depth > 0
         
-        class_match = re.search(class_pattern, line)
+        # 只有在清理过的行里找到的才算真实元素
+        class_match = re.search(class_pattern, cleaned_line)
         if class_match and not in_block:
             name = class_match.group(1)
             if name not in added_names:
@@ -118,7 +147,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                 
                 elements.append(elem)
         
-        interface_match = re.search(interface_pattern, line)
+        interface_match = re.search(interface_pattern, cleaned_line)
         if interface_match and not in_block:
             name = interface_match.group(1)
             if name not in added_names:
@@ -138,7 +167,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "metadata": {}
                 })
         
-        function_match = re.search(function_pattern, line)
+        function_match = re.search(function_pattern, cleaned_line)
         if function_match and not in_block:
             name = function_match.group(1)
             if name not in added_names:
@@ -158,7 +187,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "metadata": {}
                 })
         
-        arrow_match = re.search(arrow_function_pattern, line)
+        arrow_match = re.search(arrow_function_pattern, cleaned_line)
         if arrow_match and not in_block:
             name = arrow_match.group(1)
             if name not in added_names:
@@ -172,7 +201,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "metadata": {}
                 })
         
-        type_match = re.search(type_pattern, line)
+        type_match = re.search(type_pattern, cleaned_line)
         if type_match and not in_block:
             name = type_match.group(1)
             if name not in added_names:
@@ -195,7 +224,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "metadata": {}
                 })
         
-        enum_match = re.search(enum_pattern, line)
+        enum_match = re.search(enum_pattern, cleaned_line)
         if enum_match and not in_block:
             name = enum_match.group(1)
             if name not in added_names:
@@ -215,7 +244,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                     "metadata": {}
                 })
         
-        var_match = re.search(variable_pattern, line)
+        var_match = re.search(variable_pattern, cleaned_line)
         if var_match and not in_block:
             name = var_match.group(1)
             if name not in added_names:
@@ -230,7 +259,8 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                 })
         
         # 检查代码之后再更新深度！
-        brace_depth += line.count('{') - line.count('}')
+        # 注意：用清理后的行来计算花括号深度，避免字符串和注释里的括号干扰！
+        brace_depth += cleaned_line.count('{') - cleaned_line.count('}')
     
     import_pattern = re.compile(r'import\s+(?:{\s*)?([\w,\s*]+)(?:\s*})?\s+from\s+[\'"]([^\'"]+)[\'"]', re.MULTILINE)
     for match in import_pattern.finditer(content):
