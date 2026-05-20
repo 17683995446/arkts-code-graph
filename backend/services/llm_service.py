@@ -107,6 +107,7 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
     variable_pattern = r'(?:export\s+)?const\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*[=:]'
     type_pattern = r'(?:export\s+)?type\s+([a-zA-Z_$][a-zA-Z0-9_$]*)(?:<[^>]+>)?\s*='
     enum_pattern = r'(?:export\s+)?enum\s+([a-zA-Z_$][a-zA-Z0-9_$]*)'
+    namespace_pattern = r'(?:export\s+)?namespace\s+([a-zA-Z_$][a-zA-Z0-9_$]*)'
     
     added_names = set()
     brace_depth = 0  # 当前花括号深度
@@ -238,6 +239,26 @@ def extract_elements_regex(content: str) -> Dict[str, Any]:
                 elements.append({
                     "name": name,
                     "element_type": "enum",
+                    "code": code.strip()[:500],
+                    "line_start": start_line,
+                    "line_end": end_line,
+                    "metadata": {}
+                })
+        
+        namespace_match = re.search(namespace_pattern, cleaned_line)
+        if namespace_match and not in_block:
+            name = namespace_match.group(1)
+            if name not in added_names:
+                added_names.add(name)
+                start_line = line_num
+                end_line = find_block_end_line(lines, line_num - 1)
+                
+                code_lines = lines[start_line-1:end_line]
+                code = '\n'.join(code_lines)
+                
+                elements.append({
+                    "name": name,
+                    "element_type": "namespace",
                     "code": code.strip()[:500],
                     "line_start": start_line,
                     "line_end": end_line,
