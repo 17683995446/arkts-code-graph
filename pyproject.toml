@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arkts_code_graph"
+version = "1.0.0"
+description = "ArkTS Code Graph"
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.9.0",
+    "aiosqlite>=0.20.0",
+    "lark-parser>=0.12.0",
+    "tqdm>=4.66.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "jinja2>=3.1.0",
+    "python-multipart>=0.0.6",
+    "requests>=2.31.0",
+    "cryptography>=41.0",
+]
+
+[project.scripts]
+arkts-graph = "arkts_code_graph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
