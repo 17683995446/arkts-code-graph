@@ -1,14 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+env/
+ENV/
+.venv/
+
 # Dependencies
 node_modules/
-
-# Build outputs
-dist/
-build/
-*.log
-
-# Test artifacts
-*_report.json
-coverage/
 
 # IDE
 .vscode/
@@ -16,6 +33,9 @@ coverage/
 *.swp
 *.swo
 *~
+
+# Build outputs
+*.log
 
 # OS
 .DS_Store
@@ -25,13 +45,70 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Large test files (optional - uncomment if needed)
-# v16_*
-# v17_*
-# v18_*
-# v19_*
-# v20_*
-# v21_*
-# v22_*
-# v23_*
-# v24_*
+# Test files (NOT to be committed)
+*.py
+test_*
+debug_*
+check_*
+create_*
+simple_test.py
+unit_tests_*
+concurrent_test.py
+integration_test.py
+stress_test.py
+advanced_stress_test.py
+ultimate_stress_test.py
+deep_stress_test.py
+deep_stress_*.py
+deep_discovery*.py
+deep_issue*.py
+deep_edge_test.py
+static_code_analysis.py
+reparse_*.py
+test_fix.py
+
+# Test data directories (NOT to be committed)
+massive_chaos_test/
+extreme_complex_test/
+extreme_scale_test/
+extreme_complex_test_v2/
+scale_test_v3/
+chaos_test_project/
+realistic_project/
+concurrent_test_data/
+simple_test_data/
+stress_test_data/
+test_chaos_project/
+mock_project/
+error_test/
+real_deep_test/
+ultra_extreme_test/
+
+# Generated test results (NOT to be committed)
+*_report.json
+coverage/
+full_depth_test_*.js
+full_depth_test_*.json
+final_test_report.md
+COMPLETE_TEST_REPORT.md
+fix_verification.py
+final_validation*.py
+test_type_parsing.py
+test_generics.py
+test_namespace*.py
+test_real_project.py
+test_extreme_complex.py
+test_special_syntax.py
+api_test*.py
+api_comprehensive_test.py
+api_direct_test.py
+business_scenario_test.py
+comprehensive_test_suite*.py
+deep_stress_1.py
+deep_stress_3.py
+api_full_test.py
+ultra_scale_deep_test.py
+final_verification.py
+
+# Documentation (optional, based on requirements)
+.trae/
