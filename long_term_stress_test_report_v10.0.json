@@ -1,0 +1,3140 @@
+{
+  "startTime": 1779234858566,
+  "endTime": 1779235758578,
+  "cyclesCompleted": 34591,
+  "bugsFound": [],
+  "warningsFound": [],
+  "memoryHistory": [
+    {
+      "label": "Start",
+      "heapUsed": 10,
+      "heapTotal": 17,
+      "rss": 67,
+      "external": 3,
+      "growth": 0,
+      "timestamp": 1779234858567
+    },
+    {
+      "label": "Cycle 100",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 199,
+      "external": 3,
+      "growth": 36,
+      "timestamp": 1779234861325
+    },
+    {
+      "label": "Cycle 200",
+      "heapUsed": 73,
+      "heapTotal": 142,
+      "rss": 211,
+      "external": 3,
+      "growth": 27,
+      "timestamp": 1779234863877
+    },
+    {
+      "label": "Cycle 300",
+      "heapUsed": 49,
+      "heapTotal": 146,
+      "rss": 211,
+      "external": 3,
+      "growth": -24,
+      "timestamp": 1779234866421
+    },
+    {
+      "label": "Cycle 400",
+      "heapUsed": 73,
+      "heapTotal": 144,
+      "rss": 211,
+      "external": 3,
+      "growth": 24,
+      "timestamp": 1779234869011
+    },
+    {
+      "label": "Cycle 500",
+      "heapUsed": 39,
+      "heapTotal": 145,
+      "rss": 211,
+      "external": 3,
+      "growth": -34,
+      "timestamp": 1779234871565
+    },
+    {
+      "label": "Cycle 600",
+      "heapUsed": 27,
+      "heapTotal": 145,
+      "rss": 212,
+      "external": 3,
+      "growth": -12,
+      "timestamp": 1779234874171
+    },
+    {
+      "label": "Cycle 700",
+      "heapUsed": 76,
+      "heapTotal": 145,
+      "rss": 212,
+      "external": 3,
+      "growth": 49,
+      "timestamp": 1779234876710
+    },
+    {
+      "label": "Cycle 800",
+      "heapUsed": 42,
+      "heapTotal": 145,
+      "rss": 212,
+      "external": 3,
+      "growth": -34,
+      "timestamp": 1779234879254
+    },
+    {
+      "label": "Cycle 900",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 212,
+      "external": 3,
+      "growth": -8,
+      "timestamp": 1779234881796
+    },
+    {
+      "label": "Cycle 1000",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 212,
+      "external": 3,
+      "growth": 39,
+      "timestamp": 1779234884363
+    },
+    {
+      "label": "Cycle 1100",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -34,
+      "timestamp": 1779234886933
+    },
+    {
+      "label": "Cycle 1200",
+      "heapUsed": 26,
+      "heapTotal": 147,
+      "rss": 213,
+      "external": 3,
+      "growth": -13,
+      "timestamp": 1779234889522
+    },
+    {
+      "label": "Cycle 1300",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 16,
+      "timestamp": 1779234892086
+    },
+    {
+      "label": "Cycle 1400",
+      "heapUsed": 49,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234894663
+    },
+    {
+      "label": "Cycle 1500",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -10,
+      "timestamp": 1779234897265
+    },
+    {
+      "label": "Cycle 1600",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -8,
+      "timestamp": 1779234899877
+    },
+    {
+      "label": "Cycle 1700",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779234902439
+    },
+    {
+      "label": "Cycle 1800",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234904996
+    },
+    {
+      "label": "Cycle 1900",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779234907555
+    },
+    {
+      "label": "Cycle 2000",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -8,
+      "timestamp": 1779234910125
+    },
+    {
+      "label": "Cycle 2100",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234912700
+    },
+    {
+      "label": "Cycle 2200",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779234915294
+    },
+    {
+      "label": "Cycle 2300",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 213,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234917859
+    },
+    {
+      "label": "Cycle 2400",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234920472
+    },
+    {
+      "label": "Cycle 2500",
+      "heapUsed": 76,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 18,
+      "timestamp": 1779234923036
+    },
+    {
+      "label": "Cycle 2600",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -34,
+      "timestamp": 1779234925598
+    },
+    {
+      "label": "Cycle 2700",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234928168
+    },
+    {
+      "label": "Cycle 2800",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234930759
+    },
+    {
+      "label": "Cycle 2900",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -7,
+      "timestamp": 1779234933327
+    },
+    {
+      "label": "Cycle 3000",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234935896
+    },
+    {
+      "label": "Cycle 3100",
+      "heapUsed": 69,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779234938470
+    },
+    {
+      "label": "Cycle 3200",
+      "heapUsed": 76,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234941031
+    },
+    {
+      "label": "Cycle 3300",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -49,
+      "timestamp": 1779234943647
+    },
+    {
+      "label": "Cycle 3400",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 50,
+      "timestamp": 1779234946237
+    },
+    {
+      "label": "Cycle 3500",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779234948828
+    },
+    {
+      "label": "Cycle 3600",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234951385
+    },
+    {
+      "label": "Cycle 3700",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779234953948
+    },
+    {
+      "label": "Cycle 3800",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779234956514
+    },
+    {
+      "label": "Cycle 3900",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234959085
+    },
+    {
+      "label": "Cycle 4000",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779234961678
+    },
+    {
+      "label": "Cycle 4100",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234964272
+    },
+    {
+      "label": "Cycle 4200",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234966828
+    },
+    {
+      "label": "Cycle 4300",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -8,
+      "timestamp": 1779234969400
+    },
+    {
+      "label": "Cycle 4400",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234971955
+    },
+    {
+      "label": "Cycle 4500",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234974550
+    },
+    {
+      "label": "Cycle 4600",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779234977118
+    },
+    {
+      "label": "Cycle 4700",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779234979676
+    },
+    {
+      "label": "Cycle 4800",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -35,
+      "timestamp": 1779234982245
+    },
+    {
+      "label": "Cycle 4900",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 8,
+      "timestamp": 1779234984803
+    },
+    {
+      "label": "Cycle 5000",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234987355
+    },
+    {
+      "label": "Cycle 5100",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 4,
+      "timestamp": 1779234989957
+    },
+    {
+      "label": "Cycle 5200",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234992522
+    },
+    {
+      "label": "Cycle 5300",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779234995085
+    },
+    {
+      "label": "Cycle 5400",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779234997638
+    },
+    {
+      "label": "Cycle 5500",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235000252
+    },
+    {
+      "label": "Cycle 5600",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 218,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235002810
+    },
+    {
+      "label": "Cycle 5700",
+      "heapUsed": 56,
+      "heapTotal": 147,
+      "rss": 219,
+      "external": 3,
+      "growth": 17,
+      "timestamp": 1779235005452
+    },
+    {
+      "label": "Cycle 5800",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -29,
+      "timestamp": 1779235008037
+    },
+    {
+      "label": "Cycle 5900",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235010645
+    },
+    {
+      "label": "Cycle 6000",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235013205
+    },
+    {
+      "label": "Cycle 6100",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235015765
+    },
+    {
+      "label": "Cycle 6200",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235018320
+    },
+    {
+      "label": "Cycle 6300",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235020903
+    },
+    {
+      "label": "Cycle 6400",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235023474
+    },
+    {
+      "label": "Cycle 6500",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235026979
+    },
+    {
+      "label": "Cycle 6600",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -15,
+      "timestamp": 1779235030802
+    },
+    {
+      "label": "Cycle 6700",
+      "heapUsed": 67,
+      "heapTotal": 148,
+      "rss": 219,
+      "external": 3,
+      "growth": 28,
+      "timestamp": 1779235034209
+    },
+    {
+      "label": "Cycle 6800",
+      "heapUsed": 67,
+      "heapTotal": 148,
+      "rss": 219,
+      "external": 3,
+      "growth": 0,
+      "timestamp": 1779235037783
+    },
+    {
+      "label": "Cycle 6900",
+      "heapUsed": 36,
+      "heapTotal": 149,
+      "rss": 219,
+      "external": 3,
+      "growth": -31,
+      "timestamp": 1779235040418
+    },
+    {
+      "label": "Cycle 7000",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 3,
+      "timestamp": 1779235042996
+    },
+    {
+      "label": "Cycle 7100",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235045545
+    },
+    {
+      "label": "Cycle 7200",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235048106
+    },
+    {
+      "label": "Cycle 7300",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235050691
+    },
+    {
+      "label": "Cycle 7400",
+      "heapUsed": 76,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235053249
+    },
+    {
+      "label": "Cycle 7500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235055821
+    },
+    {
+      "label": "Cycle 7600",
+      "heapUsed": 69,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235058379
+    },
+    {
+      "label": "Cycle 7700",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -35,
+      "timestamp": 1779235060936
+    },
+    {
+      "label": "Cycle 7800",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235063492
+    },
+    {
+      "label": "Cycle 7900",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235066076
+    },
+    {
+      "label": "Cycle 8000",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": 0,
+      "timestamp": 1779235068658
+    },
+    {
+      "label": "Cycle 8100",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 219,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235071229
+    },
+    {
+      "label": "Cycle 8200",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 0,
+      "timestamp": 1779235073917
+    },
+    {
+      "label": "Cycle 8300",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235076524
+    },
+    {
+      "label": "Cycle 8400",
+      "heapUsed": 48,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": 2,
+      "timestamp": 1779235079105
+    },
+    {
+      "label": "Cycle 8500",
+      "heapUsed": 31,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": -17,
+      "timestamp": 1779235081740
+    },
+    {
+      "label": "Cycle 8600",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235084313
+    },
+    {
+      "label": "Cycle 8700",
+      "heapUsed": 23,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235086886
+    },
+    {
+      "label": "Cycle 8800",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235089443
+    },
+    {
+      "label": "Cycle 8900",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235092007
+    },
+    {
+      "label": "Cycle 9000",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235094580
+    },
+    {
+      "label": "Cycle 9100",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235097156
+    },
+    {
+      "label": "Cycle 9200",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235099718
+    },
+    {
+      "label": "Cycle 9300",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235102290
+    },
+    {
+      "label": "Cycle 9400",
+      "heapUsed": 76,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235104846
+    },
+    {
+      "label": "Cycle 9500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235107401
+    },
+    {
+      "label": "Cycle 9600",
+      "heapUsed": 69,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235109980
+    },
+    {
+      "label": "Cycle 9700",
+      "heapUsed": 36,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -33,
+      "timestamp": 1779235112587
+    },
+    {
+      "label": "Cycle 9800",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235115182
+    },
+    {
+      "label": "Cycle 9900",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779235117752
+    },
+    {
+      "label": "Cycle 10000",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235120314
+    },
+    {
+      "label": "Cycle 10100",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235122895
+    },
+    {
+      "label": "Cycle 10200",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779235125505
+    },
+    {
+      "label": "Cycle 10300",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235128085
+    },
+    {
+      "label": "Cycle 10400",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235130667
+    },
+    {
+      "label": "Cycle 10500",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235133262
+    },
+    {
+      "label": "Cycle 10600",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235135841
+    },
+    {
+      "label": "Cycle 10700",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235138426
+    },
+    {
+      "label": "Cycle 10800",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235141025
+    },
+    {
+      "label": "Cycle 10900",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 3,
+      "timestamp": 1779235143658
+    },
+    {
+      "label": "Cycle 11000",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235146237
+    },
+    {
+      "label": "Cycle 11100",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235148824
+    },
+    {
+      "label": "Cycle 11200",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235151409
+    },
+    {
+      "label": "Cycle 11300",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235153997
+    },
+    {
+      "label": "Cycle 11400",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235156598
+    },
+    {
+      "label": "Cycle 11500",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235159182
+    },
+    {
+      "label": "Cycle 11600",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235161767
+    },
+    {
+      "label": "Cycle 11700",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235164360
+    },
+    {
+      "label": "Cycle 11800",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235166937
+    },
+    {
+      "label": "Cycle 11900",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235169541
+    },
+    {
+      "label": "Cycle 12000",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235172159
+    },
+    {
+      "label": "Cycle 12100",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235174745
+    },
+    {
+      "label": "Cycle 12200",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235177331
+    },
+    {
+      "label": "Cycle 12300",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235179922
+    },
+    {
+      "label": "Cycle 12400",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235182501
+    },
+    {
+      "label": "Cycle 12500",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235185091
+    },
+    {
+      "label": "Cycle 12600",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235187677
+    },
+    {
+      "label": "Cycle 12700",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235190260
+    },
+    {
+      "label": "Cycle 12800",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235192846
+    },
+    {
+      "label": "Cycle 12900",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235195433
+    },
+    {
+      "label": "Cycle 13000",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235198006
+    },
+    {
+      "label": "Cycle 13100",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235200603
+    },
+    {
+      "label": "Cycle 13200",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235203201
+    },
+    {
+      "label": "Cycle 13300",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235205781
+    },
+    {
+      "label": "Cycle 13400",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235208360
+    },
+    {
+      "label": "Cycle 13500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235210991
+    },
+    {
+      "label": "Cycle 13600",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235213582
+    },
+    {
+      "label": "Cycle 13700",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235216180
+    },
+    {
+      "label": "Cycle 13800",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235218775
+    },
+    {
+      "label": "Cycle 13900",
+      "heapUsed": 26,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -5,
+      "timestamp": 1779235221401
+    },
+    {
+      "label": "Cycle 14000",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 32,
+      "timestamp": 1779235223991
+    },
+    {
+      "label": "Cycle 14100",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235226594
+    },
+    {
+      "label": "Cycle 14200",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235229176
+    },
+    {
+      "label": "Cycle 14300",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235231778
+    },
+    {
+      "label": "Cycle 14400",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235234387
+    },
+    {
+      "label": "Cycle 14500",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235236971
+    },
+    {
+      "label": "Cycle 14600",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235239557
+    },
+    {
+      "label": "Cycle 14700",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235242159
+    },
+    {
+      "label": "Cycle 14800",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235244761
+    },
+    {
+      "label": "Cycle 14900",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235247345
+    },
+    {
+      "label": "Cycle 15000",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235249938
+    },
+    {
+      "label": "Cycle 15100",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235252519
+    },
+    {
+      "label": "Cycle 15200",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235255107
+    },
+    {
+      "label": "Cycle 15300",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235257695
+    },
+    {
+      "label": "Cycle 15400",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235260293
+    },
+    {
+      "label": "Cycle 15500",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235262884
+    },
+    {
+      "label": "Cycle 15600",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -7,
+      "timestamp": 1779235265487
+    },
+    {
+      "label": "Cycle 15700",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235268072
+    },
+    {
+      "label": "Cycle 15800",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235270667
+    },
+    {
+      "label": "Cycle 15900",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235273250
+    },
+    {
+      "label": "Cycle 16000",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235275846
+    },
+    {
+      "label": "Cycle 16100",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235278430
+    },
+    {
+      "label": "Cycle 16200",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235281014
+    },
+    {
+      "label": "Cycle 16300",
+      "heapUsed": 26,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": -16,
+      "timestamp": 1779235283612
+    },
+    {
+      "label": "Cycle 16400",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 32,
+      "timestamp": 1779235286217
+    },
+    {
+      "label": "Cycle 16500",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235288794
+    },
+    {
+      "label": "Cycle 16600",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235291389
+    },
+    {
+      "label": "Cycle 16700",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235293976
+    },
+    {
+      "label": "Cycle 16800",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235296568
+    },
+    {
+      "label": "Cycle 16900",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235299158
+    },
+    {
+      "label": "Cycle 17000",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235301749
+    },
+    {
+      "label": "Cycle 17100",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235304342
+    },
+    {
+      "label": "Cycle 17200",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235306927
+    },
+    {
+      "label": "Cycle 17300",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235309514
+    },
+    {
+      "label": "Cycle 17400",
+      "heapUsed": 41,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -5,
+      "timestamp": 1779235312148
+    },
+    {
+      "label": "Cycle 17500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 32,
+      "timestamp": 1779235314756
+    },
+    {
+      "label": "Cycle 17600",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235317371
+    },
+    {
+      "label": "Cycle 17700",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235319966
+    },
+    {
+      "label": "Cycle 17800",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235322550
+    },
+    {
+      "label": "Cycle 17900",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235325137
+    },
+    {
+      "label": "Cycle 18000",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235327726
+    },
+    {
+      "label": "Cycle 18100",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235330309
+    },
+    {
+      "label": "Cycle 18200",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235332893
+    },
+    {
+      "label": "Cycle 18300",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235335493
+    },
+    {
+      "label": "Cycle 18400",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235338072
+    },
+    {
+      "label": "Cycle 18500",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235340652
+    },
+    {
+      "label": "Cycle 18600",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235343240
+    },
+    {
+      "label": "Cycle 18700",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235345818
+    },
+    {
+      "label": "Cycle 18800",
+      "heapUsed": 70,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": -7,
+      "timestamp": 1779235348419
+    },
+    {
+      "label": "Cycle 18900",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235351031
+    },
+    {
+      "label": "Cycle 19000",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235353617
+    },
+    {
+      "label": "Cycle 19100",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235356211
+    },
+    {
+      "label": "Cycle 19200",
+      "heapUsed": 48,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 21,
+      "timestamp": 1779235358848
+    },
+    {
+      "label": "Cycle 19300",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 29,
+      "timestamp": 1779235361455
+    },
+    {
+      "label": "Cycle 19400",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235364035
+    },
+    {
+      "label": "Cycle 19500",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235366656
+    },
+    {
+      "label": "Cycle 19600",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235369241
+    },
+    {
+      "label": "Cycle 19700",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235371843
+    },
+    {
+      "label": "Cycle 19800",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235374437
+    },
+    {
+      "label": "Cycle 19900",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235377023
+    },
+    {
+      "label": "Cycle 20000",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235379606
+    },
+    {
+      "label": "Cycle 20100",
+      "heapUsed": 42,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235382201
+    },
+    {
+      "label": "Cycle 20200",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235384779
+    },
+    {
+      "label": "Cycle 20300",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235387378
+    },
+    {
+      "label": "Cycle 20400",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235389968
+    },
+    {
+      "label": "Cycle 20500",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235392562
+    },
+    {
+      "label": "Cycle 20600",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235395165
+    },
+    {
+      "label": "Cycle 20700",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235397760
+    },
+    {
+      "label": "Cycle 20800",
+      "heapUsed": 75,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 2,
+      "timestamp": 1779235400373
+    },
+    {
+      "label": "Cycle 20900",
+      "heapUsed": 26,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -49,
+      "timestamp": 1779235403008
+    },
+    {
+      "label": "Cycle 21000",
+      "heapUsed": 82,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 56,
+      "timestamp": 1779235405638
+    },
+    {
+      "label": "Cycle 21100",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -58,
+      "timestamp": 1779235408253
+    },
+    {
+      "label": "Cycle 21200",
+      "heapUsed": 29,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 5,
+      "timestamp": 1779235410911
+    },
+    {
+      "label": "Cycle 21300",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 29,
+      "timestamp": 1779235413518
+    },
+    {
+      "label": "Cycle 21400",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235416125
+    },
+    {
+      "label": "Cycle 21500",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235418705
+    },
+    {
+      "label": "Cycle 21600",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235421289
+    },
+    {
+      "label": "Cycle 21700",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235423874
+    },
+    {
+      "label": "Cycle 21800",
+      "heapUsed": 43,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": -27,
+      "timestamp": 1779235426523
+    },
+    {
+      "label": "Cycle 21900",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235429108
+    },
+    {
+      "label": "Cycle 22000",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235431688
+    },
+    {
+      "label": "Cycle 22100",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235434272
+    },
+    {
+      "label": "Cycle 22200",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235436850
+    },
+    {
+      "label": "Cycle 22300",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235439432
+    },
+    {
+      "label": "Cycle 22400",
+      "heapUsed": 82,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 5,
+      "timestamp": 1779235442043
+    },
+    {
+      "label": "Cycle 22500",
+      "heapUsed": 52,
+      "heapTotal": 149,
+      "rss": 220,
+      "external": 3,
+      "growth": -30,
+      "timestamp": 1779235444694
+    },
+    {
+      "label": "Cycle 22600",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 2,
+      "timestamp": 1779235447292
+    },
+    {
+      "label": "Cycle 22700",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235449889
+    },
+    {
+      "label": "Cycle 22800",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235452467
+    },
+    {
+      "label": "Cycle 22900",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235455058
+    },
+    {
+      "label": "Cycle 23000",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235457643
+    },
+    {
+      "label": "Cycle 23100",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235460237
+    },
+    {
+      "label": "Cycle 23200",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235462818
+    },
+    {
+      "label": "Cycle 23300",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235465413
+    },
+    {
+      "label": "Cycle 23400",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235467994
+    },
+    {
+      "label": "Cycle 23500",
+      "heapUsed": 54,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": 8,
+      "timestamp": 1779235470628
+    },
+    {
+      "label": "Cycle 23600",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779235473204
+    },
+    {
+      "label": "Cycle 23700",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235475795
+    },
+    {
+      "label": "Cycle 23800",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235478387
+    },
+    {
+      "label": "Cycle 23900",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235480984
+    },
+    {
+      "label": "Cycle 24000",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -7,
+      "timestamp": 1779235483574
+    },
+    {
+      "label": "Cycle 24100",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -39,
+      "timestamp": 1779235486180
+    },
+    {
+      "label": "Cycle 24200",
+      "heapUsed": 52,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 21,
+      "timestamp": 1779235488809
+    },
+    {
+      "label": "Cycle 24300",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -13,
+      "timestamp": 1779235491419
+    },
+    {
+      "label": "Cycle 24400",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235494005
+    },
+    {
+      "label": "Cycle 24500",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235496589
+    },
+    {
+      "label": "Cycle 24600",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235499169
+    },
+    {
+      "label": "Cycle 24700",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235501768
+    },
+    {
+      "label": "Cycle 24800",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235504357
+    },
+    {
+      "label": "Cycle 24900",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235506948
+    },
+    {
+      "label": "Cycle 25000",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235509537
+    },
+    {
+      "label": "Cycle 25100",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235512113
+    },
+    {
+      "label": "Cycle 25200",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235514763
+    },
+    {
+      "label": "Cycle 25300",
+      "heapUsed": 33,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 6,
+      "timestamp": 1779235517357
+    },
+    {
+      "label": "Cycle 25400",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 6,
+      "timestamp": 1779235519945
+    },
+    {
+      "label": "Cycle 25500",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235522537
+    },
+    {
+      "label": "Cycle 25600",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235525133
+    },
+    {
+      "label": "Cycle 25700",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235527719
+    },
+    {
+      "label": "Cycle 25800",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235530320
+    },
+    {
+      "label": "Cycle 25900",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235532906
+    },
+    {
+      "label": "Cycle 26000",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235535496
+    },
+    {
+      "label": "Cycle 26100",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235538087
+    },
+    {
+      "label": "Cycle 26200",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235540679
+    },
+    {
+      "label": "Cycle 26300",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235543256
+    },
+    {
+      "label": "Cycle 26400",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235545855
+    },
+    {
+      "label": "Cycle 26500",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235548445
+    },
+    {
+      "label": "Cycle 26600",
+      "heapUsed": 43,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235551028
+    },
+    {
+      "label": "Cycle 26700",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235553621
+    },
+    {
+      "label": "Cycle 26800",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235556213
+    },
+    {
+      "label": "Cycle 26900",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235558793
+    },
+    {
+      "label": "Cycle 27000",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235561398
+    },
+    {
+      "label": "Cycle 27100",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235563982
+    },
+    {
+      "label": "Cycle 27200",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235566559
+    },
+    {
+      "label": "Cycle 27300",
+      "heapUsed": 72,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -1,
+      "timestamp": 1779235569177
+    },
+    {
+      "label": "Cycle 27400",
+      "heapUsed": 41,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -31,
+      "timestamp": 1779235571827
+    },
+    {
+      "label": "Cycle 27500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 32,
+      "timestamp": 1779235574435
+    },
+    {
+      "label": "Cycle 27600",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -19,
+      "timestamp": 1779235577026
+    },
+    {
+      "label": "Cycle 27700",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235579608
+    },
+    {
+      "label": "Cycle 27800",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235582187
+    },
+    {
+      "label": "Cycle 27900",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235584776
+    },
+    {
+      "label": "Cycle 28000",
+      "heapUsed": 33,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -37,
+      "timestamp": 1779235587400
+    },
+    {
+      "label": "Cycle 28100",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 28,
+      "timestamp": 1779235590019
+    },
+    {
+      "label": "Cycle 28200",
+      "heapUsed": 63,
+      "heapTotal": 147,
+      "rss": 220,
+      "external": 3,
+      "growth": 2,
+      "timestamp": 1779235592627
+    },
+    {
+      "label": "Cycle 28300",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 7,
+      "timestamp": 1779235595210
+    },
+    {
+      "label": "Cycle 28400",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235597794
+    },
+    {
+      "label": "Cycle 28500",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235600441
+    },
+    {
+      "label": "Cycle 28600",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235603030
+    },
+    {
+      "label": "Cycle 28700",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235605621
+    },
+    {
+      "label": "Cycle 28800",
+      "heapUsed": 29,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 5,
+      "timestamp": 1779235608220
+    },
+    {
+      "label": "Cycle 28900",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 29,
+      "timestamp": 1779235610850
+    },
+    {
+      "label": "Cycle 29000",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235613437
+    },
+    {
+      "label": "Cycle 29100",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235616039
+    },
+    {
+      "label": "Cycle 29200",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235618637
+    },
+    {
+      "label": "Cycle 29300",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235621222
+    },
+    {
+      "label": "Cycle 29400",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235623810
+    },
+    {
+      "label": "Cycle 29500",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235626404
+    },
+    {
+      "label": "Cycle 29600",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235628982
+    },
+    {
+      "label": "Cycle 29700",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235631589
+    },
+    {
+      "label": "Cycle 29800",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235634167
+    },
+    {
+      "label": "Cycle 29900",
+      "heapUsed": 43,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235636765
+    },
+    {
+      "label": "Cycle 30000",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235639343
+    },
+    {
+      "label": "Cycle 30100",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235641932
+    },
+    {
+      "label": "Cycle 30200",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235644517
+    },
+    {
+      "label": "Cycle 30300",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235647113
+    },
+    {
+      "label": "Cycle 30400",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235649702
+    },
+    {
+      "label": "Cycle 30500",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235652299
+    },
+    {
+      "label": "Cycle 30600",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235654887
+    },
+    {
+      "label": "Cycle 30700",
+      "heapUsed": 33,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -37,
+      "timestamp": 1779235657506
+    },
+    {
+      "label": "Cycle 30800",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 6,
+      "timestamp": 1779235660094
+    },
+    {
+      "label": "Cycle 30900",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235662698
+    },
+    {
+      "label": "Cycle 31000",
+      "heapUsed": 64,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 3,
+      "timestamp": 1779235665317
+    },
+    {
+      "label": "Cycle 31100",
+      "heapUsed": 33,
+      "heapTotal": 149,
+      "rss": 220,
+      "external": 3,
+      "growth": -31,
+      "timestamp": 1779235667959
+    },
+    {
+      "label": "Cycle 31200",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 25,
+      "timestamp": 1779235670571
+    },
+    {
+      "label": "Cycle 31300",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235673149
+    },
+    {
+      "label": "Cycle 31400",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -8,
+      "timestamp": 1779235675729
+    },
+    {
+      "label": "Cycle 31500",
+      "heapUsed": 43,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235678328
+    },
+    {
+      "label": "Cycle 31600",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235680926
+    },
+    {
+      "label": "Cycle 31700",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235683516
+    },
+    {
+      "label": "Cycle 31800",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235686100
+    },
+    {
+      "label": "Cycle 31900",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235688688
+    },
+    {
+      "label": "Cycle 32000",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235691275
+    },
+    {
+      "label": "Cycle 32100",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235693876
+    },
+    {
+      "label": "Cycle 32200",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235696467
+    },
+    {
+      "label": "Cycle 32300",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235699047
+    },
+    {
+      "label": "Cycle 32400",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235701635
+    },
+    {
+      "label": "Cycle 32500",
+      "heapUsed": 29,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": -2,
+      "timestamp": 1779235704262
+    },
+    {
+      "label": "Cycle 32600",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 32,
+      "timestamp": 1779235706851
+    },
+    {
+      "label": "Cycle 32700",
+      "heapUsed": 58,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235709454
+    },
+    {
+      "label": "Cycle 32800",
+      "heapUsed": 54,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235712058
+    },
+    {
+      "label": "Cycle 32900",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 23,
+      "timestamp": 1779235714637
+    },
+    {
+      "label": "Cycle 33000",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235717218
+    },
+    {
+      "label": "Cycle 33100",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235719848
+    },
+    {
+      "label": "Cycle 33200",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235722438
+    },
+    {
+      "label": "Cycle 33300",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -7,
+      "timestamp": 1779235725072
+    },
+    {
+      "label": "Cycle 33400",
+      "heapUsed": 29,
+      "heapTotal": 148,
+      "rss": 220,
+      "external": 3,
+      "growth": 2,
+      "timestamp": 1779235727681
+    },
+    {
+      "label": "Cycle 33500",
+      "heapUsed": 77,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 48,
+      "timestamp": 1779235730303
+    },
+    {
+      "label": "Cycle 33600",
+      "heapUsed": 73,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235732892
+    },
+    {
+      "label": "Cycle 33700",
+      "heapUsed": 70,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235735477
+    },
+    {
+      "label": "Cycle 33800",
+      "heapUsed": 34,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -36,
+      "timestamp": 1779235738067
+    },
+    {
+      "label": "Cycle 33900",
+      "heapUsed": 31,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235740670
+    },
+    {
+      "label": "Cycle 34000",
+      "heapUsed": 27,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235743262
+    },
+    {
+      "label": "Cycle 34100",
+      "heapUsed": 24,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235745841
+    },
+    {
+      "label": "Cycle 34200",
+      "heapUsed": 46,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235748428
+    },
+    {
+      "label": "Cycle 34300",
+      "heapUsed": 43,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -3,
+      "timestamp": 1779235751016
+    },
+    {
+      "label": "Cycle 34400",
+      "heapUsed": 39,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": -4,
+      "timestamp": 1779235753609
+    },
+    {
+      "label": "Cycle 34500",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 22,
+      "timestamp": 1779235756210
+    },
+    {
+      "label": "Final",
+      "heapUsed": 61,
+      "heapTotal": 146,
+      "rss": 220,
+      "external": 3,
+      "growth": 0,
+      "timestamp": 1779235758578
+    }
+  ],
+  "operationsStats": {
+    "total": 76100200,
+    "nodesCreated": 34591000,
+    "relationsCreated": 17295500,
+    "queries": 6918200,
+    "clearOps": 34591
+  },
+  "issues": []
+}

@@ -1,0 +1,1081 @@
+{
+  "startTime": 1779186479715,
+  "endTime": 1779187384535,
+  "bugsFound": [],
+  "issuesFound": [],
+  "memorySnapshots": [
+    {
+      "label": "启动",
+      "heapUsed": 11,
+      "growth": 11,
+      "timestamp": 1779186479716
+    },
+    {
+      "label": "周期 1",
+      "heapUsed": 72,
+      "growth": 61,
+      "timestamp": 1779186509867
+    },
+    {
+      "label": "周期 2",
+      "heapUsed": 164,
+      "growth": 92,
+      "timestamp": 1779186540072
+    },
+    {
+      "label": "周期 3",
+      "heapUsed": 184,
+      "growth": 20,
+      "timestamp": 1779186570184
+    },
+    {
+      "label": "周期 4",
+      "heapUsed": 281,
+      "growth": 97,
+      "timestamp": 1779186600403
+    },
+    {
+      "label": "周期 5",
+      "heapUsed": 72,
+      "growth": -209,
+      "timestamp": 1779186630522
+    },
+    {
+      "label": "周期 6",
+      "heapUsed": 133,
+      "growth": 61,
+      "timestamp": 1779186660737
+    },
+    {
+      "label": "周期 7",
+      "heapUsed": 80,
+      "growth": -53,
+      "timestamp": 1779186690893
+    },
+    {
+      "label": "周期 8",
+      "heapUsed": 110,
+      "growth": 30,
+      "timestamp": 1779186721131
+    },
+    {
+      "label": "周期 9",
+      "heapUsed": 76,
+      "growth": -34,
+      "timestamp": 1779186751226
+    },
+    {
+      "label": "周期 10",
+      "heapUsed": 39,
+      "growth": -37,
+      "timestamp": 1779186781434
+    },
+    {
+      "label": "周期 11",
+      "heapUsed": 74,
+      "growth": 35,
+      "timestamp": 1779186811590
+    },
+    {
+      "label": "周期 12",
+      "heapUsed": 121,
+      "growth": 47,
+      "timestamp": 1779186841780
+    },
+    {
+      "label": "周期 13",
+      "heapUsed": 73,
+      "growth": -48,
+      "timestamp": 1779186871892
+    },
+    {
+      "label": "周期 14",
+      "heapUsed": 97,
+      "growth": 24,
+      "timestamp": 1779186902090
+    },
+    {
+      "label": "周期 15",
+      "heapUsed": 72,
+      "growth": -25,
+      "timestamp": 1779186932198
+    },
+    {
+      "label": "周期 16",
+      "heapUsed": 134,
+      "growth": 62,
+      "timestamp": 1779186962390
+    },
+    {
+      "label": "周期 17",
+      "heapUsed": 70,
+      "growth": -64,
+      "timestamp": 1779186992490
+    },
+    {
+      "label": "周期 18",
+      "heapUsed": 95,
+      "growth": 25,
+      "timestamp": 1779187022666
+    },
+    {
+      "label": "周期 19",
+      "heapUsed": 77,
+      "growth": -18,
+      "timestamp": 1779187052764
+    },
+    {
+      "label": "周期 20",
+      "heapUsed": 87,
+      "growth": 10,
+      "timestamp": 1779187082959
+    },
+    {
+      "label": "周期 21",
+      "heapUsed": 168,
+      "growth": 81,
+      "timestamp": 1779187113078
+    },
+    {
+      "label": "周期 22",
+      "heapUsed": 110,
+      "growth": -58,
+      "timestamp": 1779187143291
+    },
+    {
+      "label": "周期 23",
+      "heapUsed": 69,
+      "growth": -41,
+      "timestamp": 1779187173410
+    },
+    {
+      "label": "周期 24",
+      "heapUsed": 79,
+      "growth": 10,
+      "timestamp": 1779187203618
+    },
+    {
+      "label": "周期 25",
+      "heapUsed": 69,
+      "growth": -10,
+      "timestamp": 1779187233728
+    },
+    {
+      "label": "周期 26",
+      "heapUsed": 86,
+      "growth": 17,
+      "timestamp": 1779187263918
+    },
+    {
+      "label": "周期 27",
+      "heapUsed": 79,
+      "growth": -7,
+      "timestamp": 1779187294019
+    },
+    {
+      "label": "周期 28",
+      "heapUsed": 36,
+      "growth": -43,
+      "timestamp": 1779187324218
+    },
+    {
+      "label": "周期 29",
+      "heapUsed": 175,
+      "growth": 139,
+      "timestamp": 1779187354347
+    },
+    {
+      "label": "周期 30",
+      "heapUsed": 37,
+      "growth": -138,
+      "timestamp": 1779187384486
+    }
+  ],
+  "testPhases": [
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 25
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 35
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 45
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 26
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": -84
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 0
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 22
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 48
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 21
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": -28
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 24
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 7
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 73
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": -98
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "时间极限",
+      "passed": true
+    },
+    {
+      "name": "空间极限",
+      "passed": true,
+      "nodes": 100000
+    },
+    {
+      "name": "并发极限",
+      "passed": true
+    },
+    {
+      "name": "数据极限",
+      "passed": true
+    },
+    {
+      "name": "递归极限",
+      "passed": true,
+      "depth": 500
+    },
+    {
+      "name": "字符串极限",
+      "passed": true
+    },
+    {
+      "name": "数字极限",
+      "passed": true
+    },
+    {
+      "name": "循环依赖",
+      "passed": true
+    },
+    {
+      "name": "内存泄漏",
+      "passed": true,
+      "growth": 2
+    },
+    {
+      "name": "混沌工程",
+      "passed": true
+    }
+  ],
+  "testResults": {
+    "timeLimit": {
+      "passed": true,
+      "iterations": 29227,
+      "opsPerSec": "4871167"
+    },
+    "spaceLimit": {
+      "passed": true,
+      "nodes": 100000
+    },
+    "concurrencyLimit": {
+      "passed": true,
+      "workers": 500,
+      "errors": 0
+    },
+    "dataLimit": {
+      "passed": true,
+      "nodes": 5000,
+      "depth": 50
+    },
+    "recursionLimit": {
+      "passed": true,
+      "depth": 500
+    },
+    "stringLimit": {
+      "passed": true
+    },
+    "numberLimit": {
+      "passed": true
+    },
+    "cyclicDependency": {
+      "passed": true
+    },
+    "memoryLeak": {
+      "passed": true,
+      "initial": 35,
+      "final": 37,
+      "growth": 2
+    },
+    "chaosEngineering": {
+      "passed": true,
+      "total": 500,
+      "failed": 0
+    }
+  }
+}

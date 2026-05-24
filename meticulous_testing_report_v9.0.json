@@ -1,0 +1,255 @@
+{
+  "startTime": 1779234753046,
+  "endTime": 1779234753629,
+  "currentPhase": 5,
+  "bugsFound": [],
+  "warningsFound": [],
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "phaseName": "基础功能深度测试",
+      "startTime": 1779234753046,
+      "tests": [
+        {
+          "name": "创建单个节点",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "批量创建100个节点",
+          "passed": true,
+          "duration": 1
+        },
+        {
+          "name": "关系创建与查询",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "按类型查询节点",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "统计功能",
+          "passed": true,
+          "duration": 1
+        },
+        {
+          "name": "搜索功能",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "清理功能",
+          "passed": true,
+          "duration": 1
+        },
+        {
+          "name": "对象池功能",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "对象池空值安全",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "对象池重复释放",
+          "passed": true,
+          "duration": 0
+        }
+      ],
+      "bugs": [],
+      "warnings": [],
+      "endTime": 1779234753056,
+      "duration": 10,
+      "passed": true
+    },
+    {
+      "phaseNumber": 2,
+      "phaseName": "边界条件精细测试",
+      "startTime": 1779234753157,
+      "tests": [
+        {
+          "name": "空值创建节点",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "特殊字符名称",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "超长ID",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "空字符串ID",
+          "passed": true,
+          "duration": 1
+        },
+        {
+          "name": "1000节点",
+          "passed": true,
+          "duration": 1
+        },
+        {
+          "name": "循环引用",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "超大量元数据",
+          "passed": true,
+          "duration": 0
+        },
+        {
+          "name": "重复ID处理",
+          "passed": true,
+          "duration": 0
+        }
+      ],
+      "bugs": [],
+      "warnings": [],
+      "endTime": 1779234753160,
+      "duration": 3,
+      "passed": true
+    },
+    {
+      "phaseNumber": 3,
+      "phaseName": "并发与压力测试",
+      "startTime": 1779234753261,
+      "tests": [
+        {
+          "name": "100并发worker",
+          "passed": true,
+          "duration": 7
+        },
+        {
+          "name": "并行数据库操作",
+          "passed": true,
+          "duration": 3
+        },
+        {
+          "name": "快速连续创建和清理",
+          "passed": true,
+          "duration": 8
+        }
+      ],
+      "bugs": [],
+      "warnings": [],
+      "endTime": 1779234753279,
+      "duration": 18,
+      "passed": true
+    },
+    {
+      "phaseNumber": 4,
+      "phaseName": "真实项目解析",
+      "startTime": 1779234753379,
+      "tests": [],
+      "bugs": [],
+      "warnings": [],
+      "endTime": 1779234753382,
+      "duration": 3,
+      "passed": true
+    },
+    {
+      "phaseNumber": 5,
+      "phaseName": "内存泄漏检测",
+      "startTime": 1779234753483,
+      "tests": [],
+      "bugs": [],
+      "warnings": [],
+      "endTime": 1779234753629,
+      "duration": 146,
+      "passed": true
+    }
+  ],
+  "memoryHistory": [
+    {
+      "label": "Phase 1 Start",
+      "heapUsed": 10,
+      "heapTotal": 17,
+      "rss": 67,
+      "external": 3,
+      "timestamp": 1779234753047
+    },
+    {
+      "label": "Phase 1 End",
+      "heapUsed": 11,
+      "heapTotal": 17,
+      "rss": 68,
+      "external": 3,
+      "timestamp": 1779234753056
+    },
+    {
+      "label": "Phase 2 Start",
+      "heapUsed": 11,
+      "heapTotal": 17,
+      "rss": 68,
+      "external": 3,
+      "timestamp": 1779234753157
+    },
+    {
+      "label": "Phase 2 End",
+      "heapUsed": 12,
+      "heapTotal": 17,
+      "rss": 69,
+      "external": 3,
+      "timestamp": 1779234753160
+    },
+    {
+      "label": "Phase 3 Start",
+      "heapUsed": 12,
+      "heapTotal": 17,
+      "rss": 69,
+      "external": 3,
+      "timestamp": 1779234753261
+    },
+    {
+      "label": "Phase 3 End",
+      "heapUsed": 11,
+      "heapTotal": 20,
+      "rss": 74,
+      "external": 3,
+      "timestamp": 1779234753279
+    },
+    {
+      "label": "Phase 4 Start",
+      "heapUsed": 11,
+      "heapTotal": 20,
+      "rss": 74,
+      "external": 3,
+      "timestamp": 1779234753379
+    },
+    {
+      "label": "Phase 4 End",
+      "heapUsed": 11,
+      "heapTotal": 20,
+      "rss": 74,
+      "external": 3,
+      "timestamp": 1779234753382
+    },
+    {
+      "label": "Phase 5 Initial",
+      "heapUsed": 11,
+      "heapTotal": 20,
+      "rss": 74,
+      "external": 3,
+      "timestamp": 1779234753484
+    },
+    {
+      "label": "Phase 5 Final",
+      "heapUsed": 13,
+      "heapTotal": 20,
+      "rss": 74,
+      "external": 3,
+      "timestamp": 1779234753628
+    }
+  ],
+  "detailedMetrics": {}
+}

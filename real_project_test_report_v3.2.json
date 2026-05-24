@@ -1,0 +1,175 @@
+{
+  "startTime": 1779103681413,
+  "tests": [
+    {
+      "name": "IndexExports",
+      "status": "PASSED"
+    },
+    {
+      "name": "CoreEngine",
+      "status": "PASSED"
+    },
+    {
+      "name": "KnowledgeGraphDatabase",
+      "status": "PASSED"
+    },
+    {
+      "name": "MemoryManagement",
+      "status": "PASSED"
+    },
+    {
+      "name": "Concurrency",
+      "status": "PASSED"
+    },
+    {
+      "name": "ProjectAnalysis:src代码库",
+      "status": "PASSED"
+    },
+    {
+      "name": "ProjectAnalysis:type-challenges",
+      "status": "PASSED"
+    },
+    {
+      "name": "ExtremeOperations",
+      "status": "PASSED"
+    },
+    {
+      "name": "ManyProjects:src",
+      "status": "PASSED"
+    }
+  ],
+  "bugsFound": [],
+  "issuesFound": [],
+  "memoryHistory": [
+    {
+      "label": "开始",
+      "heapUsed": 10,
+      "heapTotal": 17,
+      "external": 3,
+      "rss": 59,
+      "timestamp": 1779103681413
+    },
+    {
+      "label": "模块测试后",
+      "heapUsed": 31,
+      "heapTotal": 40,
+      "external": 3,
+      "rss": 104,
+      "timestamp": 1779103681607
+    },
+    {
+      "label": "核心引擎后",
+      "heapUsed": 32,
+      "heapTotal": 40,
+      "external": 3,
+      "rss": 104,
+      "timestamp": 1779103681614
+    },
+    {
+      "label": "知识图谱后",
+      "heapUsed": 32,
+      "heapTotal": 40,
+      "external": 3,
+      "rss": 104,
+      "timestamp": 1779103681615
+    },
+    {
+      "label": "内存管理后",
+      "heapUsed": 29,
+      "heapTotal": 42,
+      "external": 3,
+      "rss": 106,
+      "timestamp": 1779103681619
+    },
+    {
+      "label": "并发测试后",
+      "heapUsed": 30,
+      "heapTotal": 43,
+      "external": 3,
+      "rss": 106,
+      "timestamp": 1779103681620
+    },
+    {
+      "label": "src代码库分析前",
+      "heapUsed": 30,
+      "heapTotal": 43,
+      "external": 3,
+      "rss": 106,
+      "timestamp": 1779103681620
+    },
+    {
+      "label": "src代码库分析后",
+      "heapUsed": 45,
+      "heapTotal": 70,
+      "external": 3,
+      "rss": 157,
+      "timestamp": 1779103682142
+    },
+    {
+      "label": "type-challenges分析前",
+      "heapUsed": 45,
+      "heapTotal": 70,
+      "external": 3,
+      "rss": 157,
+      "timestamp": 1779103682142
+    },
+    {
+      "label": "type-challenges分析后",
+      "heapUsed": 53,
+      "heapTotal": 72,
+      "external": 3,
+      "rss": 159,
+      "timestamp": 1779103682368
+    },
+    {
+      "label": "项目分析后",
+      "heapUsed": 53,
+      "heapTotal": 72,
+      "external": 3,
+      "rss": 159,
+      "timestamp": 1779103682368
+    },
+    {
+      "label": "极端操作后",
+      "heapUsed": 42,
+      "heapTotal": 73,
+      "external": 3,
+      "rss": 159,
+      "timestamp": 1779103682373
+    },
+    {
+      "label": "分析src后",
+      "heapUsed": 48,
+      "heapTotal": 111,
+      "external": 3,
+      "rss": 196,
+      "timestamp": 1779103682754
+    },
+    {
+      "label": "多项目后",
+      "heapUsed": 48,
+      "heapTotal": 111,
+      "external": 3,
+      "rss": 196,
+      "timestamp": 1779103682754
+    }
+  ],
+  "projectAnalysis": [
+    {
+      "project": "src代码库",
+      "path": "./src",
+      "nodes": 4157,
+      "relations": 4091,
+      "duration": 521,
+      "status": "SUCCESS"
+    },
+    {
+      "project": "type-challenges",
+      "path": "./type-challenges",
+      "nodes": 1923,
+      "relations": 1521,
+      "duration": 226,
+      "status": "SUCCESS"
+    }
+  ]
+}

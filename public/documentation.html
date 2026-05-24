@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkTS Code Graph - 技术文档中心</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark-bg: #0f0c29;
+            --dark-bg-2: #1a1a2e;
+            --card-bg: rgba(22, 33, 62, 0.9);
+            --text-primary: #ffffff;
+            --text-secondary: #a5b4fc;
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-bg: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-2) 50%, #1a1644 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(15, 12, 41, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(102, 126, 234, 0.2);
+            color: var(--text-primary);
+        }
+
+        .main-content {
+            padding-top: 90px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title .icon {
+            font-size: 2.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .diagram-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .tech-item-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .tech-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-keyword { color: #c792ea; }
+        .code-string { color: #c3e88d; }
+        .code-function { color: #82aaff; }
+        .code-comment { color: #676e95; }
+        .code-number { color: #f78c6c; }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list .icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 1rem;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .diagram-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="showPage('home')">
+            <div class="logo-icon">🔗</div>
+            <span class="logo-text">ArkTS Code Graph</span>
+        </div>
+        <nav class="nav">
+            <button class="nav-item active" onclick="showPage('home')">🏠 首页</button>
+            <button class="nav-item" onclick="showPage('architecture')">🏛️ 架构</button>
+            <button class="nav-item" onclick="showPage('flow')">📊 流程</button>
+            <button class="nav-item" onclick="showPage('sequence')">⏱️ 时序</button>
+            <button class="nav-item" onclick="showPage('module')">📦 模块</button>
+            <button class="nav-item" onclick="showPage('tech')">⚙️ 技术</button>
+        </nav>
+    </header>
+
+    <main class="main-content" id="mainContent">
+        <!-- 首页内容 -->
+        <div id="page-home">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">🚀</span> ArkTS Code Graph 技术文档中心</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">📚 欢迎使用技术文档中心</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                        这里是 ArkTS Code Graph 的完整技术文档中心，提供系统架构图、流程图、时序图、模块图等详细技术说明。
+                        旨在帮助开发者深入理解系统设计，快速上手开发。
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">5.6.0</div>
+                            <div class="stat-label">版本号</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">119</div>
+                            <div class="stat-label">测试用例</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">9.64</div>
+                            <div class="stat-label">质量评分</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">测试通过率</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-item" onclick="showPage('architecture')">
+                        <div class="tech-item-icon">🏛️</div>
+                        <h3>系统架构图</h3>
+                        <p>查看系统的整体架构设计，包括核心层、服务层、基础设施层等组件关系。</p>
+                    </div>
+                    <div class="tech-item" onclick="showPage('flow')">
+                        <div class="tech-item-icon">📊</div>
+                        <h3>流程图</h3>
+                        <p>了解代码解析、知识图谱构建、分析处理等核心流程的工作原理。</p>
+                    </div>
+                    <div class="tech-item" onclick="showPage('sequence')">
+                        <div class="tech-item-icon">⏱️</div>
+                        <h3>时序图</h3>
+                        <p>查看各组件之间的交互时序，包括API调用、事件处理等场景。</p>
+                    </div>
+                    <div class="tech-item" onclick="showPage('module')">
+                        <div class="tech-item-icon">📦</div>
+                        <h3>模块图</h3>
+                        <p>了解系统的模块划分和依赖关系，包括核心模块、解析器、AI服务等。</p>
+                    </div>
+                    <div class="tech-item" onclick="showPage('tech')">
+                        <div class="tech-item-icon">⚙️</div>
+                        <h3>技术栈</h3>
+                        <p>查看系统使用的技术栈，包括前端、后端、数据库、工具链等。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><span class="icon">🎯</span> 快速开始</h2>
+                
+                <div class="card">
+                    <h3 class="card-title">安装与使用</h3>
+                    <div class="code-block">
+<span class="code-comment"># 安装</span>
+<span class="code-keyword">npm</span> install @arkts-graph/core
+
+<span class="code-comment"># 基本使用</span>
+<span class="code-keyword">import</span> { CodeGraph } <span class="code-keyword">from</span> <span class="code-string">'@arkts-graph/core'</span>;
+
+<span class="code-keyword">const</span> graph = <span class="code-keyword">new</span> <span class="code-function">CodeGraph</span>();
+<span class="code-keyword">await</span> graph.<span class="code-function">analyze</span>(<span class="code-string">'./src'</span>);
+<span class="code-keyword">const</span> nodes = graph.<span class="code-function">getNodes</span>();
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">核心功能</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="icon">✅</span>
+                            <div>
+                                <strong>多语言解析</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">支持 ArkTS/TypeScript/JavaScript 多语言深度解析</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <div>
+                                <strong>知识图谱构建</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">自动构建代码元素之间的关系网络</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <div>
+                                <strong>AI 智能分析</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">基于 AI 的代码质量和安全性分析</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <div>
+                                <strong>可视化展示</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">交互式的知识图谱可视化界面</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- 架构图页面 -->
+        <div id="page-architecture" style="display: none;">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">🏛️</span> 系统架构图</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">整体架构</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                        ArkTS Code Graph 采用分层架构设计，从上到下分为：应用层、服务层、核心层和基础设施层。
+                        每层都有明确的职责边界，通过标准接口进行通信。
+                    </p>
+                    
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TB
+    subgraph 应用层["🌐 应用层 (Application Layer)"]
+        A1[📱 Web 可视化界面]
+        A2[💻 CLI 命令行工具]
+        A3[🔌 API 服务接口]
+    end
+
+    subgraph 服务层["⚙️ 服务层 (Service Layer)"]
+        S1[📊 分析服务]
+        S2[🧠 AI 分析服务]
+        S3[📈 可视化服务]
+        S4[🔍 查询服务]
+    end
+
+    subgraph 核心层["🔥 核心层 (Core Layer)"]
+        C1[📝 代码解析引擎]
+        C2[🕸️ 知识图谱引擎]
+        C3[🔗 关系处理引擎]
+        C4[⚡ 性能优化引擎]
+    end
+
+    subgraph 基础设施层["🏗️ 基础设施层 (Infrastructure Layer)"]
+        I1[💾 图数据库]
+        I2[💿 缓存系统]
+        I3[📝 日志系统]
+        I4[🔒 安全系统]
+        I5[🛡️ 容错系统]
+    end
+
+    A1 --> S3
+    A2 --> S1
+    A3 --> S4
+    S1 --> C1
+    S2 --> C2
+    S3 --> C2
+    S4 --> C2
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 --> I1
+    C4 --> I2
+    C1 --> I3
+    C2 --> I4
+    C3 --> I5
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">核心组件架构</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph LR
+    subgraph Core["🔥 核心引擎 (Core Engine)"]
+        direction TB
+        E1[⚙️ 引擎调度器]
+        E2[📋 模块管理器]
+        E3[🔌 插件管理器]
+        E4[📊 性能监控]
+    end
+
+    subgraph Modules["📦 核心模块"]
+        direction TB
+        M1[📝 AST 解析器]
+        M2[🕸️ 图数据库]
+        M3[🤖 AI 分析器]
+        M4[📊 统计分析器]
+    end
+
+    subgraph Utils["🛠️ 工具模块"]
+        direction TB
+        U1[💾 缓存管理]
+        U2[🔄 重试机制]
+        U3[⏱️ 超时控制]
+        U4[🛡️ 容错管理]
+    end
+
+    E1 --> E2
+    E1 --> E3
+    E1 --> E4
+    E2 --> M1
+    E2 --> M2
+    E2 --> M3
+    E2 --> M4
+    E4 --> U1
+    E4 --> U2
+    E4 --> U3
+    E4 --> U4
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">部署架构</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TB
+    subgraph Client["👤 客户端层"]
+        C1[🌐 Web 浏览器]
+        C2[💻 开发工具]
+        C3[📱 移动设备]
+    end
+
+    subgraph Gateway["🚪 网关层"]
+        G1[🔐 API 网关]
+        G2[⚡ 负载均衡]
+        G3[🛡️ 安全防护]
+    end
+
+    subgraph Server["🖥️ 服务层"]
+        S1[🔗 主服务]
+        S2[📊 分析服务]
+        S3[🤖 AI 服务]
+        S4[📈 可视化服务]
+    end
+
+    subgraph Data["🗄️ 数据层"]
+        D1[💾 图数据库]
+        D2[💿 缓存数据库]
+        D3[📁 文件存储]
+        D4[📊 监控存储]
+    end
+
+    C1 --> G2
+    C2 --> G2
+    C3 --> G2
+    G2 --> G1
+    G1 --> G3
+    G3 --> S1
+    G3 --> S2
+    G3 --> S3
+    G3 --> S4
+    S1 --> D1
+    S2 --> D1
+    S3 --> D2
+    S4 --> D3
+    S1 --> D4
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 流程图页面 -->
+        <div id="page-flow" style="display: none;">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">📊</span> 流程图</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">代码分析流程</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                        完整的代码分析流程包括：代码输入、语法解析、语义分析、图谱构建、分析处理和结果输出六个主要阶段。
+                    </p>
+                    
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+flowchart TD
+    Start([🚀 开始]) --> Input[📥 代码输入]
+    Input --> Parse[📝 AST 解析]
+    Parse --> Lex{词法/语法正确?}
+    Lex -->|否| Error[❌ 错误处理]
+    Error --> Report[📋 生成错误报告]
+    Report --> End([🔚 结束])
+    Lex -->|是| Semantic[🧠 语义分析]
+    Semantic --> Extract[🔍 信息提取]
+    Extract --> Types{类型识别}
+    Types -->|Class| C1[标记为类]
+    Types -->|Function| C2[标记为函数]
+    Types -->|Interface| C3[标记为接口]
+    Types -->|Enum| C4[标记为枚举]
+    C1 & C2 & C3 & C4 --> Relations[🔗 关系分析]
+    Relations --> Deps[📊 依赖关系]
+    Deps --> Graph[🕸️ 构建图谱]
+    Graph --> Optimize[⚡ 性能优化]
+    Optimize --> Query[🔍 查询处理]
+    Query --> Output[📤 结果输出]
+    Output --> End
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">知识图谱构建流程</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+flowchart LR
+    subgraph Phase1["📝 阶段1: 解析"]
+        A1[源代码] --> A2[词法分析]
+        A2 --> A3[语法分析]
+        A3 --> A4[AST 生成]
+    end
+
+    subgraph Phase2["🧠 阶段2: 分析"]
+        A4 --> B1[类型推断]
+        B1 --> B2[作用域分析]
+        B2 --> B3[依赖分析]
+        B3 --> B4[语义增强]
+    end
+
+    subgraph Phase3["🕸️ 阶段3: 构建"]
+        B4 --> C1[节点创建]
+        C1 --> C2[关系创建]
+        C2 --> C3[属性设置]
+        C3 --> C4[索引构建]
+    end
+
+    subgraph Phase4["⚡ 阶段4: 优化"]
+        C4 --> D1[查询优化]
+        D1 --> D2[缓存优化]
+        D2 --> D3[压缩存储]
+        D3 --> D4[图谱就绪]
+    end
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">并发处理流程</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+flowchart TD
+    Start([🚀 启动]) --> Init[⚙️ 初始化资源]
+    Init --> Pool[🏊 创建对象池]
+    Pool --> Workers[👥 启动工作池]
+    Workers --> Queue[📋 创建任务队列]
+    Queue --> Dispatch{分发任务}
+    Dispatch -->|任务1| W1[Worker 1]
+    Dispatch -->|任务2| W2[Worker 2]
+    Dispatch -->|任务3| W3[Worker N]
+    W1 --> Result1[📊 结果1]
+    W2 --> Result2[📊 结果2]
+    W3 --> Result3[📊 结果3]
+    Result1 & Result2 & Result3 --> Merge[🔗 结果合并]
+    Merge --> Validate[✅ 验证完整性]
+    Validate -->|通过| Success[🎉 成功]
+    Validate -->|失败| Retry[🔄 重试]
+    Retry --> Dispatch
+    Success --> Cleanup[🧹 资源清理]
+    Cleanup --> End([🔚 结束])
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 时序图页面 -->
+        <div id="page-sequence" style="display: none;">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">⏱️</span> 时序图</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">代码分析时序</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                        展示从用户发起分析请求到获取结果的完整时序过程，涉及客户端、Web服务器、核心引擎和数据库多个组件。
+                    </p>
+                    
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+sequenceDiagram
+    participant Client as 👤 客户端
+    participant Web as 🌐 Web服务器
+    participant Engine as 🔥 核心引擎
+    participant Parser as 📝 解析器
+    participant Graph as 🕸️ 图数据库
+
+    Client->>Web: POST /api/analyze
+    Web->>Engine: 提交分析任务
+    Engine->>Parser: 解析代码
+    Parser-->>Engine: 返回 AST
+    Engine->>Engine: 语义分析
+    Engine->>Graph: 创建节点
+    Graph-->>Engine: 节点 ID
+    Engine->>Graph: 创建关系
+    Graph-->>Engine: 关系 ID
+    Engine->>Graph: 构建索引
+    Graph-->>Engine: 索引完成
+    Engine-->>Web: 分析结果
+    Web-->>Client: 返回 JSON
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">插件加载时序</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+sequenceDiagram
+    participant System as ⚙️ 系统
+    participant PluginMgr as 🔌 插件管理器
+    participant Plugin as 📦 插件
+    participant Registry as 📋 注册表
+
+    System->>PluginMgr: 启动插件系统
+    PluginMgr->>Registry: 扫描插件目录
+    Registry-->>PluginMgr: 发现插件列表
+    PluginMgr->>Plugin: 加载插件元数据
+    Plugin-->>PluginMgr: 返回插件信息
+    PluginMgr->>Plugin: 调用 initialize()
+    Plugin->>Plugin: 初始化资源
+    Plugin-->>PluginMgr: 初始化完成
+    PluginMgr->>Plugin: 调用 activate()
+    Plugin->>Plugin: 注册事件监听
+    Plugin-->>PluginMgr: 激活完成
+    PluginMgr-->>System: 插件加载成功
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">容错处理时序</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+sequenceDiagram
+    participant Client as 👤 客户端
+    participant Service as 🔗 服务
+    participant Retry as 🔄 重试机制
+    participant Circuit as ⚡ 熔断器
+    participant Fallback as 🛡️ 降级服务
+
+    Client->>Service: 发起请求
+    Service->>Circuit: 检查状态
+    Circuit-->>Service: 状态正常
+    Service->>Service:执行业务逻辑
+    Service-->>Circuit: 请求成功
+    Circuit-->>Client: 返回结果
+
+    Note over Client,Circuit: 故障发生
+    Client->>Service: 发起请求
+    Service->>Circuit: 检查状态
+    Circuit-->>Service: 状态正常
+    Service->>Service:执行业务逻辑
+    Service-->>Circuit: 请求失败
+    Circuit->>Retry: 触发重试
+    Retry->>Service: 重试请求
+    Service-->>Retry: 再次失败
+    Retry->>Service: 再次重试
+    Service-->>Retry: 仍然失败
+    Retry-->>Circuit: 重试耗尽
+    Circuit->>Fallback: 启用降级
+    Fallback-->>Client: 返回降级结果
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">缓存更新时序</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+sequenceDiagram
+    participant Client as 👤 客户端
+    participant API as 🌐 API网关
+    participant Cache as 💾 缓存
+    participant DB as 🗄️ 数据库
+
+    Client->>API: GET /api/data
+    API->>Cache: 查询缓存
+    Cache-->>API: 缓存命中
+    API-->>Client: 返回缓存数据
+
+    Note over API,DB: 缓存未命中
+    Client->>API: GET /api/data
+    API->>Cache: 查询缓存
+    Cache-->>API: 缓存未命中
+    API->>DB: 查询数据库
+    DB-->>API: 返回数据
+    API->>Cache: 更新缓存
+    Cache-->>API: 缓存更新成功
+    API-->>Client: 返回数据
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 模块图页面 -->
+        <div id="page-module" style="display: none;">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">📦</span> 模块图</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">模块依赖关系</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                        系统采用模块化设计，各模块之间通过依赖注入和事件总线进行通信，实现了高内聚低耦合的架构。
+                    </p>
+                    
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TB
+    subgraph Core["🔥 核心模块 (@arkts-graph/core)"]
+        direction TB
+        C1[⚙️ CoreEngine]
+        C2[📋 ModuleManager]
+        C3[🔌 PluginManager]
+        C4[📊 EventBus]
+    end
+
+    subgraph Parsers["📝 解析器模块 (@arkts-graph/parsers)"]
+        direction TB
+        P1[ASTParser]
+        P2[TypeScriptParser]
+        P3[JavaScriptParser]
+        P4[ArkTSParser]
+    end
+
+    subgraph AI["🤖 AI模块 (@arkts-graph/ai)"]
+        direction TB
+        A1[AIService]
+        A2[CodeAnalyzer]
+        A3[QualityChecker]
+        A4[SecurityScanner]
+    end
+
+    subgraph Viz["📈 可视化模块 (@arkts-graph/visualization)"]
+        direction TB
+        V1[GraphRenderer]
+        V2[DataTransformer]
+        V3[InteractiveUI]
+    end
+
+    subgraph CLI["💻 CLI模块 (@arkts-graph/cli)"]
+        direction TB
+        L1[CommandParser]
+        L2[ProgressBar]
+        L3[OutputFormatter]
+    end
+
+    C1 --> C2
+    C1 --> C3
+    C1 --> C4
+    C2 --> Parsers
+    C3 --> AI
+    C4 --> Viz
+    C2 --> CLI
+    Parsers --> AI
+    AI --> V1
+    Parsers --> V2
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">模块包结构</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TD
+    subgraph Project["📁 项目结构"]
+        direction TB
+        P1["@arkts-graph/core"]
+        P2["@arkts-graph/parsers"]
+        P3["@arkts-graph/ai"]
+        P4["@arkts-graph/visualization"]
+        P5["@arkts-graph/cli"]
+    end
+
+    subgraph Core["📦 @arkts-graph/core"]
+        C1["src/core/engine.ts"]
+        C2["src/core/parser.ts"]
+        C3["src/core/graph.ts"]
+        C4["src/infrastructure/**"]
+    end
+
+    subgraph Parsers["📦 @arkts-graph/parsers"]
+        R1["src/typescript/parser.ts"]
+        R2["src/javascript/parser.ts"]
+        R3["src/arkts/parser.ts"]
+        R4["src/common/ast.ts"]
+    end
+
+    P1 --> Core
+    P2 --> Parsers
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">类依赖关系</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+classDiagram
+    class CoreEngine {
+        -moduleManager: ModuleManager
+        -pluginManager: PluginManager
+        -eventBus: EventBus
+        +initialize()
+        +analyze(source)
+        +dispose()
+    }
+
+    class ModuleManager {
+        -modules: Map~string, Module~
+        -registry: ModuleRegistry
+        +register(module)
+        +unregister(name)
+        +get(name)
+        +list()
+    }
+
+    class PluginManager {
+        -plugins: Map~string, Plugin~
+        -loader: PluginLoader
+        +load(pluginPath)
+        +unload(name)
+        +activate(name)
+        +deactivate(name)
+    }
+
+    class ASTParser {
+        -config: ParserConfig
+        +parse(source): AST
+        +traverse(node)
+        +transform(ast)
+    }
+
+    class GraphDatabase {
+        -nodes: Map
+        -relations: Map
+        +addNode(node)
+        +addRelation(rel)
+        +query(query)
+        +getSubgraph(ids)
+    }
+
+    CoreEngine --> ModuleManager
+    CoreEngine --> PluginManager
+    CoreEngine --> ASTParser
+    ASTParser --> GraphDatabase
+    ModuleManager ..> GraphDatabase : uses
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 技术栈页面 -->
+        <div id="page-tech" style="display: none;">
+            <section class="section">
+                <h1 class="section-title"><span class="icon">⚙️</span> 技术栈</h1>
+                
+                <div class="card">
+                    <h2 class="card-title">前端技术</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-item-icon">📄</div>
+                            <h3>HTML5/CSS3</h3>
+                            <p>语义化标签，现代化CSS特性，包括Flexbox、Grid、动画等</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">⚡</div>
+                            <h3>Vanilla JavaScript</h3>
+                            <p>原生JavaScript，无框架依赖，提供极致性能</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">📊</div>
+                            <h3>Mermaid.js</h3>
+                            <p>流程图、时序图、架构图等图表渲染</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">🎨</div>
+                            <h3>Modern CSS</h3>
+                            <p>CSS Variables、CSS Grid、毛玻璃效果等</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">后端技术</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-item-icon">🟢</div>
+                            <h3>Node.js</h3>
+                            <p>事件驱动的JavaScript运行时，高并发处理</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">📘</div>
+                            <h3>TypeScript</h3>
+                            <p>类型安全的JavaScript超集，提高代码质量</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">🗄️</div>
+                            <h3>图数据库</h3>
+                            <p>自定义图数据库实现，支持大规模节点和关系</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-icon">🔄</div>
+                            <h3>内存池</h3>
+                            <p>对象池技术，减少GC压力，提升性能</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">开发工具链</h2>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph LR
+    subgraph DevTools["🛠️ 开发工具"]
+        direction TB
+        T1["📦 npm/yarn"]
+        T2["🔧 TypeScript"]
+        T3["🧪 Jest"]
+        T4["📝 ESLint"]
+        T5["💄 Prettier"]
+        T6["🚀 ts-node"]
+    end
+
+    subgraph Build["🏗️ 构建工具"]
+        direction TB
+        B1["⚙️ tsc"]
+        B2["📦 webpack/vite"]
+        B3["🔍 terser"]
+    end
+
+    subgraph Test["🧪 测试工具"]
+        direction TB
+        Te1["✅ Jest"]
+        Te2["🔄 Integration"]
+        Te3["💯 Coverage"]
+    end
+
+    T1 --> T2
+    T2 --> T3
+    T2 --> T4
+    T4 --> T5
+    T2 --> T6
+    T6 --> B1
+    B1 --> B2
+    B2 --> B3
+    T3 --> Te1
+    Te1 --> Te2
+    Te2 --> Te3
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">系统设计原则</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="icon">🏗️</span>
+                            <div>
+                                <strong>模块化设计</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">高度模块化，每个模块独立可部署</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">🔌</span>
+                            <div>
+                                <strong>插件化架构</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">插件系统支持动态加载和卸载</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">🛡️</span>
+                            <div>
+                                <strong>容错设计</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">重试机制、熔断器、优雅降级</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">⚡</span>
+                            <div>
+                                <strong>性能优化</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">对象池、LRU缓存、批量处理</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">📊</span>
+                            <div>
+                                <strong>可观测性</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">完整的日志、监控、追踪体系</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">性能指标</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">1.2M+</div>
+                            <div class="stat-label">节点/秒</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.1M+</div>
+                            <div class="stat-label">关系/秒</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">&lt;1ms</div>
+                            <div class="stat-label">查询延迟</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">90%</div>
+                            <div class="stat-label">内存优化</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button class="back-btn" onclick="showPage('home')" title="返回首页">🏠</button>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#a5b4fc',
+                secondaryColor: '#764ba2',
+                tertiaryColor: '#1a1a2e'
+            },
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                actorMargin: 50,
+                messageMargin: 40
+            }
+        });
+
+        function showPage(pageName) {
+            // 隐藏所有页面
+            const pages = document.querySelectorAll('[id^="page-"]');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // 显示目标页面
+            const targetPage = document.getElementById(`page-${pageName}`);
+            if (targetPage) {
+                targetPage.style.display = 'block';
+            }
+
+            // 更新导航状态
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.textContent.toLowerCase().includes(pageName) || 
+                    (pageName === 'home' && item.textContent.includes('首页'))) {
+                    item.classList.add('active');
+                }
+            });
+
+            // 重新渲染 Mermaid 图表
+            if (pageName !== 'home') {
+                mermaid.run({
+                    querySelector: '.mermaid'
+                });
+            }
+
+            // 滚动到顶部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

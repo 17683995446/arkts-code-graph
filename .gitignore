@@ -1,58 +1,37 @@
 # Dependencies
 node_modules/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
 
 # Build outputs
 dist/
 build/
+*.log
 
-# Environment variables
-.env
-.env.local
+# Test artifacts
+*_report.json
+coverage/
 
 # IDE
-.idea/
 .vscode/
+.idea/
 *.swp
 *.swo
-
-# Database
-data/knowledge_graph.db
-
-# Logs
-*.log
-/tmp/
+*~
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Test data (temporary files)
-simple_test_data/
-concurrent_test_data/
-stress_test_data/
-ultimate_test_project/
-chaos_test_project/
+# Temporary files
+*.tmp
+*.temp
 
-# Realistic project test data (temporary)
-realistic_project/deep_test_special_1.ts
-realistic_project/deep_test_special_2.ts
-realistic_project/error_test/
-realistic_project/mock_project/
-
-# Test scripts (temporary)
-simple_test.py
-concurrent_test.py
-advanced_stress_test.py
-ultimate_stress_test.py
-debug_parser.py
-deep_stress_*.py
-test_*.py
-debug_*.py
-
-# Test reports
-final_test_report.md
-.trae/documents/
+# Large test files (optional - uncomment if needed)
+# v16_*
+# v17_*
+# v18_*
+# v19_*
+# v20_*
+# v21_*
+# v22_*
+# v23_*
+# v24_*

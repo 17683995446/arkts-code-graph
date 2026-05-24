@@ -1,0 +1,38 @@
+{
+  "startTime": 1779099722950,
+  "cli": {
+    "tests": [],
+    "bugs": [],
+    "warnings": []
+  },
+  "web": {
+    "tests": [],
+    "bugs": [],
+    "warnings": []
+  },
+  "plugin": {
+    "tests": [],
+    "bugs": [
+      {
+        "test": "pluginSystem",
+        "error": "Cannot find module './dist/src/infrastructure/plugins/plugin.manager'\nRequire stack:\n- /workspace/extreme_pressure_test_v2.js"
+      }
+    ],
+    "warnings": []
+  },
+  "parsing": {
+    "tests": [],
+    "bugs": [
+      {
+        "test": "parsingException",
+        "error": "KnowledgeGraphDatabase is not defined"
+      }
+    ],
+    "warnings": []
+  },
+  "stress": {
+    "tests": [],
+    "bugs": [],
+    "warnings": []
+  }
+}
