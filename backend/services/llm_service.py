@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.logger import llm_logger as logger
 
-SILICON_FLOW_API_KEY = "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg"
+SILICON_FLOW_API_KEY = "REDACTED_API_KEY"
 SILICON_FLOW_API_URL = "https://api.siliconflow.cn/v1/chat/completions"
 
 SYSTEM_PROMPT = """你是一个专业的ArkTS/TypeScript代码分析助手。请分析代码并提取所有元素。
